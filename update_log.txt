@@ -1,0 +1,6 @@
+17/11/2025
+Base code: 
+- Generate a signal with a synthetic Doppler shift
+- Use FFT to estimate frequency drift
+- Plot true frequency drift vs estimate
+
