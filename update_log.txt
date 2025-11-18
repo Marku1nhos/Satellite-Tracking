@@ -8,3 +8,7 @@ Base code:
 - Explored the effects of varying window sizes on time vs frequency resolution
 - Split script into estimate_doppler() function
 - Upgraded code to use parabolic interpolation to increase accuracy
+- compare_interp.py compares original crude doppler estimation algorithm with 
+    estimation with interpolation
+- Added make_synthetic_iq() - generates a synthetic signal with doppler drift
+- New file signal_processing.py to act as a function library
