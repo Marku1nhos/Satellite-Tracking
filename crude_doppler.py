@@ -5,7 +5,7 @@ import matplotlib.pyplot as plt
 fs = 1_000_000       # sample rate (1 MHz)
 f0 = 100_000         # initial tone frequency (100 kHz)
 drift_rate = 10_000  # Hz per second, big enough to see
-duration = 0.2       # seconds
+duration = 0.05       # seconds
 
 t = np.arange(int(fs * duration)) / fs
 f_inst = f0 + drift_rate * t  # "true" instantaneous frequency vs time
@@ -13,6 +13,15 @@ f_inst = f0 + drift_rate * t  # "true" instantaneous frequency vs time
 # IQ signal
 phase = 2 * np.pi * np.cumsum(f_inst) / fs
 iq = np.exp(1j * phase)
+
+# Add noise
+snr_db = 0  # try 20 dB, 10 dB, 0 dB
+signal_power = np.mean(np.abs(iq)**2)
+noise_power = signal_power / (10**(snr_db/10))
+noise = (np.sqrt(noise_power/2) *
+         (np.random.randn(*iq.shape) + 1j*np.random.randn(*iq.shape)))
+iq_noisy = iq + noise
+iq = iq_noisy  # use noisy signal for subsequent processing
 
 # Window sizes to compare
 win_sizes = [1024, 4096, 16384]

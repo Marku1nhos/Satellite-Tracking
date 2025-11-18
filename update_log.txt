@@ -5,4 +5,6 @@ Base code:
 - Plot true frequency drift vs estimate
 
 18/11/2025
-Explored the effects of varying window sizes on time vs frequency resolution
+- Explored the effects of varying window sizes on time vs frequency resolution
+- Split script into estimate_doppler() function
+- Upgraded code to use parabolic interpolation to increase accuracy
