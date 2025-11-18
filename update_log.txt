@@ -12,3 +12,7 @@ Base code:
     estimation with interpolation
 - Added make_synthetic_iq() - generates a synthetic signal with doppler drift
 - New file signal_processing.py to act as a function library
+- max_power_fft.py takes raw iq data (Interleaving) and produces spectrogram + doppler plots
+    - Sample iq data from:
+        https://network.satnogs.org/observations/10963519/
+        https://data.camras.nl/satnogs/
