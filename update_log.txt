@@ -4,3 +4,5 @@ Base code:
 - Use FFT to estimate frequency drift
 - Plot true frequency drift vs estimate
 
+18/11/2025
+Explored the effects of varying window sizes on time vs frequency resolution
